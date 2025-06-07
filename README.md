@@ -4,6 +4,12 @@ This project provides a step-by-step guide to building a foundational Hybrid Ide
 
 The lab is structured in progressive phases, starting with a core setup and advancing to production-grade security and troubleshooting scenarios.
 
+📘 Powered by Prompt Engineering  
+This lab was designed, built, and documented in tandem with ChatGPT-4, demonstrating not just technical proficiency in IAM and cloud identity, but also advanced prompt engineering workflows for system planning, troubleshooting, and documentation.
+
+Every step — from idea to implementation — reflects both my engineering skill and my ability to co-create effectively with AI.
+
+
 ---
 
 ## 📋 Table of Contents
