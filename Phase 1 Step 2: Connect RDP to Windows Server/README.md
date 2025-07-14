@@ -86,12 +86,15 @@ Remote connectivity is a cornerstone of enterprise infrastructure, especially in
 
 ## 🖼️ Screenshots
 
-| Description                                    | Image                                                                                            | Filename                        |
-| ---------------------------------------------- | ------------------------------------------------------------------------------------------------ | ------------------------------- |
-| Certificate Warning – Accept RDP Connection    | ![Certificate Warning](https://github.com/your-repo/images/rdp-certificate-warning.png?raw=true) | `(rdp-certificate-warning.png)` |
-| Successful RDP Login – Windows Desktop Visible | ![Windows Desktop](https://github.com/your-repo/images/windows-login-success.png?raw=true)       | `(windows-login-success.png)`   |
-| Session Logoff – DWVM Crash Notification       | ![DWVM Crash Error](https://github.com/your-repo/images/dwvm-crash-logoff.png?raw=true)          | `(dwvm-crash-logoff.png)`       |
-| Azure VM Size Configuration – D2s\_v3 Selected | ![Azure VM Size](https://github.com/your-repo/images/azure-vm-size-d2sv3.png?raw=true)           | `(azure-vm-size-d2sv3.png)`     |
+| Description                                             | Image | Filename |
+|---------------------------------------------------------|-------|----------|
+| Azure VM Size Configuration – D2s_v3 Selected           | ![Azure VM Size](https://github.com/miadco/Hybrid-Identity-Enterprise-Administration/blob/main/Phase%201%20Step%202:%20Connect%20RDP%20to%20Windows%20Server/screenshots/azure-vm-size-d2sv3.png?raw=true) | `(azure-vm-size-d2sv3.png)` |
+| Session Logoff – DWVM Crash Notification                | ![DWVM Crash Error](https://github.com/miadco/Hybrid-Identity-Enterprise-Administration/blob/main/Phase%201%20Step%202:%20Connect%20RDP%20to%20Windows%20Server/screenshots/dwvm-crash-logoff.png?raw=true) | `(dwvm-crash-logoff.png)` |
+| NSG – Add Custom Inbound Rule for Port 3389             | ![Add Custom NSG Rule](https://github.com/miadco/Hybrid-Identity-Enterprise-Administration/blob/main/Phase%201%20Step%202:%20Connect%20RDP%20to%20Windows%20Server/screenshots/nsg-add-custom-rule-8080.png?raw=true) | `(nsg-add-custom-rule-8080.png)` |
+| NSG – Default Inbound Rules Overview                    | ![Default Inbound Rules](https://github.com/miadco/Hybrid-Identity-Enterprise-Administration/blob/main/Phase%201%20Step%202:%20Connect%20RDP%20to%20Windows%20Server/screenshots/nsg-inbound-rules-default.png?raw=true) | `(nsg-inbound-rules-default.png)` |
+| NSG – No Custom Port Rules Present                      | ![No NSG Port Rules](https://github.com/miadco/Hybrid-Identity-Enterprise-Administration/blob/main/Phase%201%20Step%202:%20Connect%20RDP%20to%20Windows%20Server/screenshots/nsg-no-port-rules.png?raw=true) | `(nsg-no-port-rules.png)` |
+| Certificate Warning – Accept RDP Connection             | ![RDP Certificate Warning](https://github.com/miadco/Hybrid-Identity-Enterprise-Administration/blob/main/Phase%201%20Step%202:%20Connect%20RDP%20to%20Windows%20Server/screenshots/rdp-certificate-warning.png?raw=true) | `(rdp-certificate-warning.png)` |
+| Successful RDP Login – Windows Desktop Visible          | ![Windows Login Success](https://github.com/miadco/Hybrid-Identity-Enterprise-Administration/blob/main/Phase%201%20Step%202:%20Connect%20RDP%20to%20Windows%20Server/screenshots/windows-login-success.png?raw=true) | `(windows-login-success.png)` |
 
 ---
 
