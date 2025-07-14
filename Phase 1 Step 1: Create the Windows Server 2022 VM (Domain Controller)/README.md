@@ -18,7 +18,7 @@
 
 ## 📌 Overview
 
-In this phase, we deploy a Windows Server 2022 virtual machine in Microsoft Azure, which will serve as our on-premises domain controller. This is the foundational step toward establishing a hybrid identity environment using Microsoft Entra ID. The VM will later be configured with Active Directory Domain Services (AD DS) and synced with the cloud using Azure AD Connect.
+In this phase, I deploy a Windows Server 2022 virtual machine in Microsoft Azure, which will serve as on-premises domain controller. This is the foundational step toward establishing a hybrid identity environment using Microsoft Entra ID. The VM will later be configured with Active Directory Domain Services (AD DS) and synced with the cloud using Azure AD Connect.
 
 ---
 
@@ -58,7 +58,7 @@ In this phase, we deploy a Windows Server 2022 virtual machine in Microsoft Azur
 2. Created a new VM using:
 
    * Windows Server 2022 Datacenter Gen2 image
-   * Standard\_B1s size (upgradable to D2s\_v3)
+   * Standard\_B1s size (upgraded to D2s\_v3)
    * Enabled RDP (port 3389) for remote access
 3. Configured default networking and disk options
 4. Deployed VM into new resource group: `HybridIdentityLab-RG`
