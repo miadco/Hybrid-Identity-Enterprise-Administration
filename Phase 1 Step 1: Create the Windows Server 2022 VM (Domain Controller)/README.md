@@ -93,4 +93,4 @@ Deploying a domain controller in Azure reflects real-world hybrid environments w
 
 ## 🙏 Acknowledgments
 
-This is a lab was created using AI to simulate a real world hybrid identity scenario
+Thanks to Microsoft for providing the Azure platform that powers these hybrid identity labs. I also used AI assistance to help structure, troubleshoot, and document this process efficiently.
