@@ -80,13 +80,11 @@ Verifying domain controller functionality is a non-negotiable step in any enterp
 
 ## 🖼️ Screenshots
 
-| 🖼️ Screenshot                                                                                  | 📄 Description                               | 🔗 Raw Link  |
-| ----------------------------------------------------------------------------------------------- | -------------------------------------------- | ------------ |
-| ![image1.png](https://github.com/YOUR_USERNAME/YOUR_REPO/blob/main/path/to/image1.png?raw=true) | Rebooted domain controller                   | `image1.png` |
-| ![image2.png](https://github.com/YOUR_USERNAME/YOUR_REPO/blob/main/path/to/image2.png?raw=true) | Initial login attempt with `.\labadmin`      | `image2.png` |
-| ![image3.png](https://github.com/YOUR_USERNAME/YOUR_REPO/blob/main/path/to/image3.png?raw=true) | Successful domain login with `corp\labadmin` | `image3.png` |
-| ![image4.png](https://github.com/YOUR_USERNAME/YOUR_REPO/blob/main/path/to/image4.png?raw=true) | PowerShell output from `dcdiag`              | `image4.png` |
-| ![image5.png](https://github.com/YOUR_USERNAME/YOUR_REPO/blob/main/path/to/image5.png?raw=true) | Snapshot confirmation in Azure               | `image5.png` |
+| Screenshot | Description |
+|------------|-------------|
+| ![DCDiag Results](screenshots/dcdiag-results.png) | Output from `dcdiag` showing domain controller health checks and validation of key AD DS services. |
+| ![Get-ADDomain & whoami](screenshots/get-addomain-whoami.png) | PowerShell output showing `Get-ADDomain` response (showing domain “corp.hybridlab.local”) and `whoami` verifying login as `corp\labadmin`. |
+
 
 ---
 
