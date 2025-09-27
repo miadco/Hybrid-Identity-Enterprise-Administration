@@ -84,12 +84,16 @@ Deploying a domain controller in a hybrid lab mimics real-world enterprise ident
 
 ---
 
-## 🖼️ Screenshots
+## 📸 Screenshots – Phase 1 Step 3: Connect and Promote Domain Controller
 
-| Description                                               | Image                                                                                            | Filename                         |
-| --------------------------------------------------------- | ------------------------------------------------------------------------------------------------ | -------------------------------- |
-| *(Placeholder – replace with actual links once uploaded)* | ![Example Screenshot](https://github.com/your-repo/images/ad-ds-installed.png?raw=true)          | `(ad-ds-installed.png)`          |
-| *(Placeholder – replace with actual links once uploaded)* | ![Example Screenshot](https://github.com/your-repo/images/domain-promotion-success.png?raw=true) | `(domain-promotion-success.png)` |
+| # | Screenshot | Description |
+|---|------------|-------------|
+| 1 | ![01-install-ad-ds-role.png](./screenshots/01-install-ad-ds-role.png) | The Active Directory Domain Services (AD DS) role was successfully installed using PowerShell with `Install-WindowsFeature -Name AD-Domain-Services -IncludeManagementTools`. |
+| 2 | ![02-install-ad-ds-forest.png](./screenshots/02-install-ad-ds-forest.png) | A new AD forest was created using `Install-ADDSForest`, promoting the server as a domain controller for `corp.hybridlab.local`. Warnings about DNS delegation and security settings were displayed. |
+| 3 | ![03-rdp-login-corp-domain.png](./screenshots/03-rdp-login-corp-domain.png) | Successful RDP login attempt using the domain credentials `corp\labadmin`, confirming that domain services are active and accepting logins. |
+| 4 | ![04-domain-controller-status-getaddomain.png](./screenshots/04-domain-controller-status-getaddomain.png) | `Get-ADDomain` output confirms the server is now a fully functional domain controller. Key roles like RID Master and PDC Emulator are listed. |
+| 5 | ![05-server-manager-dashboard.png](./screenshots/05-server-manager-dashboard.png) | Server Manager confirms successful installation of AD DS, DNS, and File and Storage Services. The domain controller is fully promoted and manageable. |
+
 
 ---
 
