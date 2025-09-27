@@ -1,13 +1,13 @@
 # Azure Hybrid Identity & Enterprise Administration Lab
 
-This project provides a step-by-step guide to building a foundational Hybrid Identity lab in Microsoft Azure. It is designed to be a superior alternative to local virtualization (like VirtualBox), providing hands-on experience in a realistic, enterprise-grade cloud environment.
+This project provides a step-by-step guide to building a foundational Hybrid Identity lab in Microsoft Azure. It is designed to be an alternative to local virtualization (like VirtualBox), providing hands-on experience in a realistic, enterprise-grade cloud environment.
 
 The lab is structured in progressive phases, starting with a core setup and advancing to production-grade security and troubleshooting scenarios.
 
 📘 Powered by Prompt Engineering  
 This lab was designed, built, and documented in tandem with ChatGPT-4, demonstrating not just technical proficiency in IAM and cloud identity, but also advanced prompt engineering workflows for system planning, troubleshooting, and documentation.
 
-Every step — from idea to implementation — reflects both my engineering skill and my ability to co-create effectively with AI.
+Every step from idea to implementation reflects both my engineering skill and my ability to co-create effectively with AI.
 
 
 ---
@@ -154,6 +154,6 @@ To build a functioning Microsoft Hybrid Identity environment by:
 
 ---
 
-This lab not only prepares you for real-world IAM and hybrid identity tasks—it demonstrates your ability to plan, build, secure, and recover enterprise systems in the cloud.
+This lab not only prepares for real-world IAM and hybrid identity tasks, it demonstrates ability to plan, build, secure, and recover enterprise systems in the cloud.
 
 ---
