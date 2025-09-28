@@ -15,7 +15,7 @@
 
 ## 📖 Overview
 
-This phase establishes hybrid identity by installing Microsoft Entra Connect Sync on a Windows Server 2022 domain controller and enabling synchronization between the on-premises Active Directory and Microsoft Entra ID. It also implements scoped OU filtering and password writeback, aligning with real-world Tier 1 practices.
+I decided to give a more step by step view of this phase. I took screenshots every step of the way to document how AI breaks down objectives and lab instructions. This phase establishes hybrid identity by installing Microsoft Entra Connect Sync on a Windows Server 2022 domain controller and enabling synchronization between the on-premises Active Directory and Microsoft Entra ID. It also implements scoped OU filtering and password writeback, aligning with real-world Tier 1 practices.
 
 ---
 
