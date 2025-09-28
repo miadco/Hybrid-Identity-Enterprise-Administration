@@ -1,0 +1,101 @@
+# 🧪 Phase 2: VM Creation, Active Directory Installation & Domain Controller Promotion
+
+## 📚 Table of Contents
+- [📌 Overview](#-overview)  
+- [🎯 Objectives](#-objectives)  
+- [🧠 Key Concepts Reinforced](#-key-concepts-reinforced)  
+- [🧰 Lab Environment & Tools](#-lab-environment--tools)  
+- [🔧 Tasks Performed](#-tasks-performed)  
+- [📈 Outcome Summary](#-outcome-summary)  
+- [🏢 Business Relevance](#-business-relevance)  
+- [🖼️ Screenshots](#-screenshots)  
+- [🙏 Acknowledgments](#-acknowledgments)  
+
+---
+
+## 📌 Overview
+This phase focused on provisioning a compatible Azure-hosted Windows Server 2022 VM and promoting it to a domain controller for the **corp.hybridlab.local** forest. Multiple deployment attempts failed due to Trusted Launch restrictions, leading to a refined process using a **Gen1-compatible image** and the Azure Portal UI.  
+
+Once successfully deployed, the VM was configured with **Active Directory Domain Services (AD DS)** and promoted to a domain controller — laying the foundation for upcoming hybrid identity integration with **Microsoft Entra ID**.
+
+---
+
+## 🎯 Objectives
+- Provision a Windows Server 2022 VM that supports AD DS promotion  
+- Avoid Trusted Launch and Gen2 conflicts by selecting a Gen1-compatible image  
+- Install AD DS role and configure the VM as the first domain controller  
+- Promote the server to **corp.hybridlab.local**  
+- Verify domain functionality and domain user login  
+
+---
+
+## 🧠 Key Concepts Reinforced
+
+| Concept                  | Explanation                                                                 |
+|---------------------------|-----------------------------------------------------------------------------|
+| **Trusted Launch Errors** | Azure may silently enable Trusted Launch, which breaks certain PowerShell provisioning paths. Using Gen1 images or disabling TL resolves this. |
+| **Gen1 vs Gen2**          | Gen1 VMs are more compatible with legacy domain controller setups and avoid many of Azure’s security enforcement defaults. |
+| **AD DS Role**            | Adds the necessary services to promote a server to a domain controller.     |
+| **Domain Promotion**      | Creates a new Active Directory forest and configures DNS, replication, and authentication infrastructure. |
+| **Domain Account Login**  | Allows signing in using **corp\labadmin** once AD DS is fully operational. |
+
+---
+
+## 🧰 Lab Environment & Tools
+- **Virtual Machine**: Azure-hosted Windows Server 2022 Datacenter (**HybridLab-DC2**)  
+- **VM Size**: Standard_B2ms (2 vCPUs, 8 GiB RAM)  
+- **Image**: Windows Server 2022 Datacenter (Gen1-compatible, Desktop Experience)  
+- **Authentication**: Local admin → promoted to **corp\labadmin**  
+- **Platform**: Microsoft Azure  
+- **Tools Used**: Azure Portal, PowerShell (Admin)  
+
+---
+
+## 🔧 Tasks Performed
+1. Attempted multiple PowerShell-based deployments using Azure Cloud Shell  
+   - All failed due to Trusted Launch enforcement.  
+2. Deleted broken VM deployments while preserving networking components.  
+3. Rebuilt VM via **Azure Portal GUI**:  
+   - Selected *Windows Server 2022 Datacenter* image (non-Azure Edition)  
+   - Used **Standard_B2ms** to avoid Trusted Launch  
+   - Verified Trusted Launch disabled (not visible = already off)  
+4. RDP’d into the new VM.  
+5. Installed AD DS using PowerShell:  
+
+   ```powershell
+   Install-WindowsFeature -Name AD-Domain-Services -IncludeManagementTools
+6. Install-ADDSForest `
+  -DomainName "corp.hybridlab.local" `
+  -SafeModeAdministratorPassword (ConvertTo-SecureString "7^S~f$ZA3E2D~UK" -AsPlainText -Force) `
+  -InstallDns `
+  -Force
+7. Waited for automatic reboot and logged in using: corp\labadmin
+
+## 📈 Outcome Summary
+
+The VM was successfully provisioned, configured, and promoted to a **domain controller** for the **corp.hybridlab.local** forest.  
+
+- ✅ DNS and domain services are functional  
+- ✅ Domain credential login works  
+- ✅ Server is now ready for synchronization with **Microsoft Entra ID**  
+
+## 🏢 Business Relevance
+Correctly provisioning a domain controller in a hybrid lab is **foundational** for any organization planning to synchronize identities between on-prem and the cloud.  
+
+By identifying and avoiding Azure-specific traps like Trusted Launch enforcement and Gen2 image conflicts, this phase simulates the real-world issues IT admins face during hybrid deployments.  
+
+A reliable AD DS base ensures **authentication, policy application, and identity lifecycle management** are rooted in a healthy environment — critical for enterprise scalability.  
+
+---
+
+## 🖼️ Screenshots
+
+| Screenshot              | Description                                                                 |
+|-------------------------|-----------------------------------------------------------------------------|
+| **Azure VM Overview**   | Confirming HybridLab-DC2 is deployed using Windows Server 2022 and running in West US 3 |
+| **VM Running Status**   | Shows VM is running with Public IP assigned and networking configured        |
+| **RDP Session**         | RDP used to log in and perform AD DS promotion and domain configuration     |
+| **PowerShell Output**   | Outputs from `Install-WindowsFeature` and `Install-ADDSForest` showing successful promotion (future addition) |
+
+## 🙏 Acknowledgments
+Thanks to the **Microsoft Azure Portal** for its flexibility and powerful tooling — and to **AI tooling** that helped navigate PowerShell deployment challenges, making documentation and troubleshooting seamless.  
