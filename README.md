@@ -1,32 +1,40 @@
 # 🎩 Hybrid Identity Enterprise Administration Lab  
 
 ## 📌 Overview  
-This repository documents a full **Hybrid Identity deployment lab** simulating how enterprises integrate on-premises Active Directory with **Microsoft Entra ID** (formerly Azure AD).  
-The project follows a **multi-phase structure**, starting with the deployment of a Windows Server 2022 domain controller in Azure, continuing through **Azure AD Connect setup, OU filtering, password writeback, and validation**.  
+This repository captures a step-by-step **Hybrid Identity Lab** that demonstrates how to extend an on-premises Active Directory Domain Services (AD DS) environment into **Microsoft Entra ID** (formerly Azure AD).  
 
-The goal is to showcase **hands-on identity administration skills** aligned with **SC-300 (Microsoft Identity & Access Administrator)** and real-world IAM job functions.  
+The lab begins with deploying a Windows Server 2022 virtual machine in Microsoft Azure, configuring it as a domain controller, and verifying its health. It then walks through installing and configuring **Microsoft Entra Connect Sync**, applying **OU filtering** to scope synchronization, enabling **Password Hash Synchronization**, and validating that on-premises accounts successfully appear in Microsoft Entra ID.  
+
+By documenting each stage with screenshots and clear explanations, this project shows the **core foundations of hybrid identity administration** used in real-world enterprise environments.    
 
 ---
 
 ## 🎯 Objectives  
-- Deploy and configure a domain controller in Microsoft Azure  
-- Establish hybrid identity with Microsoft Entra Connect Sync  
-- Implement scoped OU filtering for secure synchronization  
-- Enable password hash sync and password writeback  
-- Validate synchronization and hybrid identity functionality  
-- Document the entire workflow with **step-by-step READMEs and screenshots**  
+- Deploy a Windows Server 2022 VM in Microsoft Azure  
+- Connect to the server remotely via RDP and prepare it for role installation  
+- Install and configure Active Directory Domain Services (AD DS)  
+- Promote the server to a domain controller and create the corp.hybridlab.local forest  
+- Verify domain controller health using PowerShell and `dcdiag`  
+- Install and configure Microsoft Entra Connect Sync  
+- Scope synchronization with OU filtering (HybridLabUsers OU)  
+- Enable Password Hash Synchronization  
+- Validate that on-prem users successfully synced into Microsoft Entra ID  
+  
 
 ---
 
 ## 🧠 Key Concepts Reinforced  
 | Concept | Description |  
 |---------|-------------|  
-| **Hybrid Identity** | Bridging on-prem AD DS with Microsoft Entra ID |  
-| **Domain Controller** | Core authentication/authorization server for AD |  
-| **OU Filtering** | Scoping synchronization to specific organizational units |  
-| **Password Hash Sync** | Cloud authentication using synced password hashes |  
-| **Password Writeback** | Allows password resets in Entra to flow back to AD |  
-| **Conditional Access Readiness** | Foundation for enforcing MFA, device compliance, and policies |  
+| **Domain Controller (DC)** | A Windows Server promoted to manage Active Directory Domain Services (AD DS), serving as the on-premises identity source. |  
+| **Active Directory Domain Services (AD DS)** | Provides centralized identity and authentication for users, groups, and devices within the corp.hybridlab.local forest. |  
+| **Hybrid Identity** | Extending on-prem AD DS identities into Microsoft Entra ID to enable a unified identity model. |  
+| **Microsoft Entra Connect Sync** | The tool used to synchronize on-prem AD objects (users, groups) into Microsoft Entra ID. |  
+| **OU Filtering** | Restricting synchronization to a specific Organizational Unit (HybridLabUsers) for security and least privilege. |  
+| **Password Hash Synchronization** | Syncing password hashes from AD DS to Microsoft Entra ID so users can authenticate in the cloud. |  
+| **Verification & Health Checks** | Using tools like `dcdiag`, PowerShell, and the Entra Admin Center to confirm sync success and AD DS health. |  
+
+  
 
 ---
 
@@ -62,13 +70,13 @@ Each phase has its own README with detailed tasks and screenshots.
 - ✅ Fully functional domain controller in Azure  
 - ✅ Hybrid identity established with Entra Connect Sync  
 - ✅ OU filtering configured for least privilege sync  
-- ✅ Password hash synchronization and writeback enabled  
+- ✅ Password hash synchronization enabled  
 - ✅ Users successfully synced and validated in Entra  
 
 ---
 
 ## 💼 Business Relevance  
-This lab demonstrates the **foundational building blocks** of hybrid identity, which many organizations still rely on as they transition to the cloud. By setting up a domain controller, configuring Microsoft Entra Connect, scoping synchronization with OU filtering, and enabling password hash synchronization with writeback, the project replicates the **core tasks of an IAM or cloud support role**.  
+This lab demonstrates the **foundational building blocks** of hybrid identity, which many organizations still rely on as they transition to the cloud. By setting up a domain controller, configuring Microsoft Entra Connect, scoping synchronization with OU filtering replicates the **core tasks of an IAM or cloud support role**.  
 
 These skills directly support:  
 - Managing identity lifecycles across on-premises and cloud environments  
